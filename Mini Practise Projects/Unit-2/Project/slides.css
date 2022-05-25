@@ -1,0 +1,75 @@
+
+/* Customer Support start */
+
+#coustmer-container{
+    margin: auto;
+    background-color: rgb(255,255,255);
+    text-align: center;
+    position: relative;
+    padding-bottom: 50px;
+}
+#coustmer-container h1{
+    margin-bottom: 20px;
+    padding-top: 50px;
+}
+.slide1{
+    margin: auto;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    width: 40%;
+    margin-top: 80px;
+    padding-top: 100px;
+    position: relative;
+    padding: 70px 50px 10px 50px;
+}
+.slide1>img{
+border-radius: 50%;
+width: 20%;
+height: 20%;
+position: absolute;
+top: -10%;
+left: 40%;
+}
+.slide1 h4{
+    margin-top: 0px;
+}
+.sub-img{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0px;
+}
+.sub-img img{
+    width: 30%;
+    height: 30%;
+}
+.sub-img a{
+    text-decoration: none;
+    color: gray;
+}
+.right{
+    background-color: rgb(251,227,233);
+    width: 5%;
+    height: 8%;
+    border-radius: 50%;
+    border: 0px;
+    font-size: large;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    position: absolute;
+    left: 90%;
+    top: 55%;
+}
+.left{
+    background-color: rgb(251,227,233);
+    width: 5%;
+    height: 8%;
+    border-radius: 50%;
+    border: 0px;
+    font-size: large;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    position: absolute;
+    left: 10%;
+    top: 55%;
+}
+.slide1{
+    display: none;
+}

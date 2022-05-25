@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #Form-container{
+            width: 25%;
+            margin: auto;
+            border: 2px solid black;
+        }
+        #Form{
+            text-align: left;
+        }
+        #navbar{
+            display: flex;
+        }
+        #navbar h4{
+            padding: 10px
+        }
+        a{
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="navbar">
+       <a href="index.html"><h4>Home</h4></a>
+       <a href="admin.html"><h4>Admin</h4></a>
+       <a href="product.html"> <h4>Product</h4></a>
+    </div>
+    <div id="Form-container">
+        <form id="Form">
+            <input type="text" id="name" placeholder="Product Name"><br>
+            <input type="text" id="category" placeholder="Category"><br>
+            <input type="url" id="image" placeholder="img URL"><br>
+            <input type="number" id="price"  placeholder="Price"><br>
+           <select name="" id="gender">
+               <option value="">--</option>
+               <option value="M">Male</option>
+               <option value="F">Female</option>
+           </select><br>
+          <select name="" id="sold">
+              <option value="F">False</option>
+              <option value="T">True</option>
+          </select><br>
+          <input type="submit" id="add">
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    document.querySelector('Form').addEventListener('submit',myfun)
+    
+    var arr =  JSON.parse(localStorage.getItem('Products')) || [];
+
+    function data(N,C,U,P,G,S){
+        this.name = N;
+        this.category = C;
+        this.image = U;
+        this.price = P;
+        this.gender = G;
+        this.sold = S;
+    }
+
+    function myfun(){
+        event.preventDefault()
+        var details = document.querySelector('#Form')
+        var N = details.name.value
+        var C = details.category.value
+        var U = details.image.value
+        var P =  details.price.value
+        var G = details.gender.value
+        var S = details.sold.value
+
+       var product_details = new data(N,C,U,P,G,S)
+
+       arr.push(product_details)
+
+
+       localStorage.setItem('Products',JSON.stringify(arr))
+      
+    }
+</script>

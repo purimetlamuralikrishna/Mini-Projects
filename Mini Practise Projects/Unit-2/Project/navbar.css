@@ -1,0 +1,60 @@
+body{
+    background-color: rgb(244,244,244);
+}
+.main-menu{
+    background-color: rgb(0,30,56);
+    text-align:center;
+    width: 100%;
+    position: relative;
+    top: 0px;
+    /* z-index: 1; */
+}
+
+.main-menu ul{
+    display: inline-flex;
+}
+
+li{
+   padding: 5px 15px 0px 15px;
+   list-style-type: none;
+}
+.head{
+    text-align: center;
+}
+.ring-types{
+    display: flex;  
+}
+.ring-types>div{
+    margin-left: 10px;
+}
+.ring1,.ring3{
+    background-color: white;
+}
+hr{
+    border: 1px dashed wheat;
+}
+.ring-data{
+    display: flex;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+}
+.ring-data>div{
+    padding: 20px;
+}
+.div-imgs{
+display: grid;
+grid-template-rows: repeat(3,1fr);
+}
+.price-range{
+    text-align: left;
+}
+.Metals-Stones{
+    text-align: left;
+}
+.ring-data{
+    display: none;
+}
+#ring :hover .ring-data{
+    display: block
+}

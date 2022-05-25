@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>MARRIAGE AGE VALIDATOR</h2>
+    <select id="gender">
+        <option value="">--</option>
+        <option value="male">M</option>
+        <option value="female">F</option>
+    </select>
+    <input type="number" id="age" placeholder="year of birth" value="">
+    <button id="submit" onclick="check()" >submit</button>
+</body>
+</html>
+
+<script>
+    function check(){
+        var gender = document.getElementById('gender').value
+        var year = document.getElementById('age').value
+
+        if(gender === 'male' && year <= 2001){
+            alert('Elegible for Marriage')
+            console.log(gender)
+        }
+        else if(gender === 'female' && year <= 2001){
+            alert('Elegible for Marriage')
+            console.log(gender)
+        }
+        else if(year>=2002){
+            alert('not elegible for marriage')
+            console.log(gender)
+        }
+    }
+</script>

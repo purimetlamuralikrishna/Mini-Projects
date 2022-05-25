@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            height: 400px;
+            width: 25%;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            margin: auto;
+            padding-top: 20px;
+        }
+        #display{
+            height: 25%;
+            width: 80%;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            margin: auto;
+        }
+        #keyboard{
+            display: grid;
+            grid-template-columns:repeat(3,1fr);
+            grid-template-rows: repeat(5,1fr);
+            gap: 5px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        #keyboard>div{
+            padding: 15px 0px 15px 0px;
+            text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="display"></div>
+        <div id="keyboard">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>0</div>
+            <div>*</div>
+            <div>=</div>
+            <div>C</div>
+        </div>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    var buttons = document.querySelectorAll('#keyboard > div')
+    var display = document.querySelector('#display')
+
+    for(i=0;i<buttons.length;i++){
+        buttons[i]=addEventListener('click',exponent)
+    }
+
+
+
+    function exponent(){
+        var num = event.target.innerText
+        var ans = 1
+        switch (num){
+            case "C":
+                display.innerText="";
+                break;
+            case "=":
+                display.innerText = 
+                break;
+            default:
+                display.innerText += num
+        }
+    }
+</script>

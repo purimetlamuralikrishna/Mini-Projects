@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #heads{
+            flex-direction: column;
+            width: 45%;
+            margin: auto;
+            margin-top: 25px;
+            text-align: center;
+        }
+        #plan{
+            width: 60%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows:auto;
+            gap: 10px;
+            margin: auto;
+            margin-top: 50px;
+        }
+        #heads>div{
+            width: 80%;
+            margin: auto;
+        }
+        h2{
+            font-size: 35px;
+            margin-bottom: 0px;
+        }
+        p{
+            font-size: 18px;
+            color: gray;
+            line-height: 25px
+        }
+        #plan>div{
+            text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding-bottom: 25px;
+        }
+        h1{
+            margin-bottom: 0px;
+        }
+        h6{
+            margin-top: 0px;
+            font-style: italic;
+        }
+        #plan p{
+            padding: 0 10px 0 10px;
+        }
+        button{
+            font-weight: bold;
+            font-size: 15px;
+            padding: 10px 40px 10px 40px;
+            border-radius: 5px;
+            border-color: blue;
+            color: blue
+        }
+        button:hover{
+            background-color: blue;
+            color: aliceblue;
+        }
+     .price1{
+         color: green
+     }
+     .price2{
+         color: brown;
+     }
+     .price3{
+         color: rgb(0, 119, 255)
+     }
+     @media only screen and (min-width:421px) and (max-width:780px){
+        #plan{
+            grid-template-columns: repeat(2,1fr);
+        }
+     }
+     @media only screen and (min-width:81px) and (max-width:420px){
+        #plan{
+            grid-template-columns: repeat(1,1fr);
+        }
+     }
+   
+
+    </style>
+</head>
+<body>
+    <div id="heads">
+        <div>
+            <h2>Choose a plan that right for your bussiness</h2>
+        </div>
+        <p>We collect reviews from users so you can get an honest opinion of what an experience
+            with our website are really like!
+        </p>
+    </div>
+    <div id="plan">
+        <div>
+            <h3>Starter Plan</h3>
+            <h1 class="price1">Free</h1>
+            <h6>per month</h6>
+            <p>We collect reviews from our users so you can get an honest opinion
+                of what an experience with our Website.
+            </p>
+            <button>Start Now</button>
+        </div>
+        <div>
+            <h3>Bussiness plan</h3>
+            <h1 class="price2">$39.00</h1>
+            <h6>per month</h6>
+            <p>We collect reviews from our users so you can get an honest opinion
+                of what an experience with our Website.
+            </p>
+            <button>Start Now</button>
+        </div>
+        <div>
+            <h3>Premium plan</h3>
+            <h1 class="price3">$59.00</h1>
+            <h6>per month</h6>
+            <p>We collect reviews from our users so you can get an honest opinion
+                of what an experience with our Website.
+            </p>
+            <button>Start Now</button>
+        </div>
+    </div>
+</body>
+</html>

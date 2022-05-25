@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        #data{
+            margin: auto;
+            width: 80%;
+        }
+        
+        #unlisted{
+            font-size: 30px;
+        }
+        #unlisted li{
+            font-size: 20px;
+            line-height: 30px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="data">
+
+    </div>
+</body>
+</html>
+<script>
+    var data = JSON.parse(localStorage.getItem('hoisting'))
+    var unlisted = document.createElement('ul')
+    unlisted.innerText= "Hoisting"
+    unlisted.setAttribute('id','unlisted')
+    document.querySelector('#data').append(unlisted)
+   
+for(let i in data){
+   
+    var li = document.createElement('li')
+    li.innerText = data[i]
+
+    unlisted.append(li)
+}
+     
+</script>

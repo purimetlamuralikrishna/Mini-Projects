@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+           margin: auto;
+            display: grid;
+            width: 80%;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: auto;
+            gap: 10px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #container>div{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        h4{
+            padding-left: 25px;
+            color: rgb(82, 79, 79);
+            margin-bottom: 10px;
+        }
+        h2{
+            padding-left: 25px;
+            display: inline-block;
+        }
+        strike{
+            color: rgb(82, 79, 79);
+            padding-left: 40px;
+        }
+        img{
+            width: 100%;
+
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    var data = [
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi1.jpg.pagespeed.ic.mkSk-Af1ka.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$25.00",
+        strikedOffPrice:"$95.00"
+    },{
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi2.jpg.pagespeed.ic.uBrpABaJqp.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    },{
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi3.jpg.pagespeed.ic.iO_cFEPy2K.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    },
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi4.jpg.pagespeed.ic.kmiQW8I5wx.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    }
+]
+
+var container= document.createElement('div')
+container.setAttribute('id','container')
+
+data.map(function(E){
+    var box = document.createElement('div');
+
+    var img = document.createElement('img');
+    img.src=E.imgUrl
+
+    var itemname = document.createElement('h4');
+    itemname.innerText = E.name
+
+    var price = document.createElement('h2');
+    price.innerText = E.price
+
+    var strike = document.createElement('strike');
+    strike.innerText = E.strikedOffPrice
+
+    box.append(img,itemname,price,strike)
+
+    container.append(box)
+    document.querySelector('body').append(container)
+})
+</script>

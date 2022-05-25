@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+  
+   var h1= document.createElement('h1')
+
+   var button1 = document.createElement('button')
+   button1.innerText="Increase"
+   button1.setAttribute('id','increase')
+
+   var button2 = document.createElement('button')
+   button2.innerText="decrease"
+   button2.setAttribute('id','decrease')
+
+   document.querySelector('body').append(h1,button1,button2)
+
+ 
+
+
+   var counter;
+
+   if(localStorage.getItem('count')=== null){
+       counter = 0
+   }
+   else {
+       counter = localStorage.getItem('count')
+   }
+  
+   h1.innerText = counter
+
+   document.querySelector('#increase').addEventListener('click',increase)
+   document.querySelector('#decrease').addEventListener('click',decrease)
+  
+
+   function increase(){
+       counter++
+       h1.innerText = counter
+       localStorage.setItem('count',counter)
+   }
+
+   function decrease(){
+       counter--
+       h1.innerText = counter
+       localStorage.setItem('count',counter)
+   }
+</script>

@@ -1,0 +1,41 @@
+
+
+#container{
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+}
+#sidebar{
+    width: 15%;
+}
+#sidebar p{
+    background-color: blueviolet;
+    padding: 5px 10px 5px 10px;
+}
+#results{
+    width: 80%;
+}
+.news img{
+    width: 30%; width: 30%;
+    
+}
+.news{
+    border: 2px solid black;
+    margin-top: 5%;
+}
+a{
+    text-decoration: none;
+}
+p{
+    color: black;
+}
+.news>p:nth-child(1){
+    font-size: 20px;
+    font-weight: 20px;
+}
+#detailed_news{
+    margin-top: 5%;
+}
+#detailed_news img{
+    width: 30%;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #container{
+            width: 90%;
+            margin: auto;
+            margin-top: 25px;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            justify-items: center;
+        }
+        #sub_container{
+           
+            width: 50%;
+            text-align: center;
+        }
+        #pr_name{
+            margin-top: 0px;
+            margin-bottom: 0px;
+            text-align: center;
+            font-size: 25px;
+          
+        }
+        #pr_img{
+            width: 60%;
+            height: 120px;
+        }
+        #remove{
+            margin: 10px;
+        }
+        #navbar{
+            display: flex;
+        }
+        #navbar h4{
+            padding: 10px
+        }
+        a{
+            text-decoration: none;
+        }
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="navbar">
+        <a href="index.html"><h4>Home</h4></a>
+        <a href="admin.html"><h4>Admin</h4></a>
+        <a href="product.html"><h4>Product</h4></a>
+     </div>
+     <div id="counter">hiii</div>
+    <div id="container">
+
+    </div>
+    
+</body>
+</html>
+
+<script>
+
+var arr =  JSON.parse(localStorage.getItem('Products')) || [];
+
+window.addEventListener('load',function(){
+    data(arr)
+})
+
+
+function data(arr){
+
+document.querySelector('#container').innerHTML = ""
+document.querySelector('#counter').innerHTML = arr.length
+
+arr.map(function(e,i){
+
+    var sub_div = document.createElement('div')
+    sub_div.setAttribute('id','sub_container')
+
+    var button_div = document.createElement('div')
+
+    var name = document.createElement('h6')
+    name.setAttribute('id','pr_name')
+    name.innerText = e.name
+
+    var image = document.createElement('img')
+    image.setAttribute('id','pr_img')
+    image.src= e.image
+
+    var remove = document.createElement('button')
+    remove.setAttribute('id','remove')
+    remove.innerText = 'Remove'
+    remove.addEventListener('click',function(){
+        removeitem(e,i)
+    })
+
+    var sold = document.createElement('button')
+    sold.innerText = 'Sold'
+    sold.setAttribute('id','Soldbutton')
+    if(e.sold === 'F'){
+        sold.style.backgroundColor = "green"
+    }
+    else{
+        sold.style.backgroundColor = "red"
+    }
+    sold.addEventListener('click',function(){
+        solditem(e,i)
+    })
+
+    button_div.append(remove,sold)
+    sub_div.append(name,image,button_div)
+    document.querySelector('#container').append(sub_div)
+
+
+})
+}
+
+
+
+function removeitem(e,i){
+    arr.splice(i,1)
+    localStorage.setItem('Products',JSON.stringify(arr))
+    window.location.reload()
+}
+
+function solditem(e,i){
+    if(e.sold === 'T'){
+         e.sold = 'F'
+         data(arr)
+    }
+    else if(e.sold === 'F'){
+        e.sold = 'T'
+         data(arr)
+    } 
+}
+
+
+
+
+
+</script>

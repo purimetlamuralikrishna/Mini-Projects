@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="slides.css">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div id="coustmer-container">
+        <h1>Customer Says</h1>
+        <div class="slide1">
+            <img src="https://kinclimg2.bluestone.com/f_webp/static/resources/themes/bluestone/images/new/static/home/new/Divya-Menon.jpg" alt="">
+            <h4>Divya Menon</h4>
+            <p>I buy my daughters birthday gift every year at BlueStone... And my daughters
+                Lover very much..I really appreciate the products delivered as before the said date
+                and even the quality of the product....
+            </p>
+            <div class="sub-img"><a href="#">
+                <img src="https://kinclimg5.bluestone.com/f_webp,c_scale,w_50,b_rgb:f0f0f0/giproduct/BIRS0004P14_YAA18XXXXXXXXXXXX_ABCD00-PICS-00004-1024-10881.png" alt="">
+                <p>The Brave LadyBird Pendant for Kids</p>
+            </a>
+            </div>
+        </div>
+      
+
+        <div class="slide1">
+            <img src="https://kinclimg2.bluestone.com/f_webp/static/resources/themes/bluestone/images/new/static/home/new/Divya-Menon.jpg" alt="">
+            <h4>hiiiiiiiiiiiiiii</h4>
+            <p>I buy my daughters birthday gift every year at BlueStone... And my daughters
+                Lover very much..I really appreciate the products delivered as before the said date
+                and even the quality of the product....
+            </p>
+            <div class="sub-img"><a href="#">
+                <img src="https://kinclimg5.bluestone.com/f_webp,c_scale,w_50,b_rgb:f0f0f0/giproduct/BIRS0004P14_YAA18XXXXXXXXXXXX_ABCD00-PICS-00004-1024-10881.png" alt="">
+                <p>The Brave LadyBird Pendant for Kids</p>
+            </a>
+            </div>
+        </div>
+
+
+        <button class="right" onclick="plus(+1)"> > </button>
+        <button class="left" onclick="plus(-1)"> < </button>
+
+     </div>
+</body>
+</html>
+
+<script>
+
+var y = 1
+show(y)
+
+function plus(n){
+    y+=n
+console.log(y)
+show(y)
+}
+
+    function show(y){
+        var x = document.getElementsByClassName("slide1")
+        if(y>=x.length){
+            y=0
+        }
+        if(y<=0){
+            y=x.length-1
+        }
+        for(i=0;i<x.length;i++){
+            x[i].style.display = 'none'
+        }
+        x[y].style.display='block'
+    }
+</script>

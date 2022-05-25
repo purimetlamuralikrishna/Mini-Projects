@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="continent_select">
+        <option value="">--</option>
+        <option value="Asia">India</option>
+        <option value="North and Central America">United States of America</option>
+        <option value="Asia">China</option>
+        <option value="Asia">Nepal</option>
+        <option value="Oceania">Australia</option>
+        <option value="Europe">France</option>
+        <option value="Europe">Germany</option>
+        <option value="Africa">South Africa</option>
+        <option value="Africa">Nigeria</option>
+        <option value="North and Central America">Mexico</option>
+        <option value="South America">Argentina</option>
+        <option value="South America">Brazil</option>
+        <option value="North and Central America">Canada</option>
+        <option value="Asia">Singapore</option>
+        <option value="Europe">Sweden</option>
+    </select>
+    <button>Find continent</button>
+    
+</body>
+</html>
+
+
+<script>
+    document.querySelector('button').addEventListener('click',find)
+   
+
+
+    function find(){
+        var select = document.querySelector('#continent_select').value
+        console.log(select)
+       switch (select){
+            case 'South America':
+               alert('The continent is South America')
+               break;
+            case 'North and Central America':
+               alert('The continent is North and Central America')
+               break;
+            case 'Europe':
+               alert('The continent is Europe')
+               break;
+            case 'Africa':
+               alert('The continent is Africa')
+               break;
+            case 'Oceania':
+                alert('The continent is Oceania')
+                break
+            default :
+               alert('The continent is  Asia ')
+       }
+    }
+   
+</script>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     form{
+       text-align: center;
+       margin: auto;
+       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+       width: 25%;
+       padding: 50px 0px 50px 0px;
+     }
+     #name{
+       height: 25px;
+       width: 80%;
+       margin-bottom: 20px;
+       text-align: center;
+     }
+     #name~input{
+        height: 25px;
+       width: 80%;
+       margin-bottom: 20px;
+       text-align: center;
+     }
+     h1{
+        text-align: center;
+        margin-bottom: 50px;
+      }
+    </style>
+</head>
+<body>
+    <h1>Payment Gateway</h1>
+    <form action="">
+        <input type="text" placeholder="Name" id="name">
+        <input type="number" placeholder="Card Number">
+        <input type="number" placeholder="CVV">
+        <input type="number" placeholder="expiry date">
+     
+    </form>
+</body>
+</html>
+
+
+<script>
+    var total = JSON.parse(localStorage.getItem('total'))|| []
+    var sum = 0
+    for(i=0;i<total.length;i++){
+        sum = sum + total[i]
+    }
+    
+    var totamamount = document.createElement('input')
+    totamamount.value = '$'+ sum
+   
+
+    var submitt =  document.createElement('input')
+    submitt.type = 'submit'
+
+    document.querySelector('form').append(totamamount,submitt)
+
+</script>

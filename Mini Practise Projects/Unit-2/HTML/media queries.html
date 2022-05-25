@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            display: grid;
+            width: 50%;
+            margin: auto;
+            margin-top: 150px;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: auto;
+            gap: 5px;
+            padding: 25px;
+            grid-template-areas: 
+              "A A A A"
+              "B C D E";
+        }
+        .a{
+            grid-area: A;
+            background-color: yellow;
+        }
+        .b{
+            grid-area: B;
+            background-color: red;
+            padding-bottom: 50px
+        }
+        .c{
+            grid-area: C;
+            background-color: blue;
+            padding-bottom: 50px
+        }
+        .d{
+            grid-area: D;
+            background-color:green;
+            padding-bottom: 50px
+        }
+        .e{
+            grid-area: E;
+            background-color: gray;
+            padding-bottom: 50px
+        }
+        @media  only screen and (min-width:421px) and (max-width:780px) {
+            #main{
+            grid-template-columns: repeat(2,1fr);
+            grid-template-areas: 
+              "A A "
+              "B C "
+              "D E";
+        }
+    }
+
+    @media  only screen and (min-width:80px) and (max-width:420px) {
+            #main{
+            grid-template-columns: repeat(1,1fr);
+            grid-template-areas: 
+              "A"
+              "B"
+              "C"
+              "D"
+              "E";
+        }
+    }
+
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="a">Navigation</div>
+        <div class="b">Box 1</div>
+        <div class="c">Box 2</div>
+        <div class="d">Box 3</div>
+        <div class="e">Box 4</div>
+    </div>
+</body>
+</html>

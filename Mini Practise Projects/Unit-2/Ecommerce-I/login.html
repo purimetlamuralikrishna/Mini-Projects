@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #navbar {
+        display: flex;
+        justify-content: space-around;
+        background-color: teal;
+        padding: 25px 10px 25px 10px
+      }
+      a {
+        text-decoration: none;
+      }
+      #navbar a:hover {
+        color: white;
+      }
+      #navbar a {
+        cursor: pointer;
+      }
+      #email{
+       height: 25px;
+       width: 80%;
+       margin-bottom: 20px;
+       text-align: center;
+     }
+     #pass{
+      height: 25px;
+      width: 80%;
+      margin-bottom: 20px;
+       text-align: center;
+     }
+     form{
+       text-align: center;
+       margin: auto;
+       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+       width: 25%;
+       padding: 50px 0px 50px 0px;
+     }
+     h1{
+        text-align: center;
+        margin-bottom: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar">
+      <div><a href="men.html">Men</a></div>
+      <div><a href="women.html">Women</a></div>
+      <div><a href="signup.html">Signup</a></div>
+      <div><a href="login.html">Login</a></div>
+    </div>
+    <h1>Login page</h1>
+    <form>
+      <input id="email" type="text" placeholder="Enter email" />
+      <input id="pass" type="password" placeholder="Enter password" />
+      <input type="submit" />
+    </form>
+  </body>
+</html>
+
+<script>
+  document.querySelector("form").addEventListener("submit", loginFun);
+  var regdUsers = JSON.parse(localStorage.getItem("userCreds"));
+  //console.log(regdUsers);
+
+  function loginFun() {
+    event.preventDefault();
+    var enteredEmail = document.querySelector("#email").value;
+    var enteredPass = document.querySelector("#pass").value;
+    //console.log(email, pass);
+
+    var greenflag = 0
+    for (var i = 0; i < regdUsers.length; i++) {
+      
+      if (
+        regdUsers[i].email == enteredEmail &&
+        regdUsers[i].password == enteredPass
+      ) {
+        alert("login success");
+        window.location.href = "index.html";
+        greenflag++
+        break;
+      }
+    }
+    if(greenflag==0){
+        alert('Check Email "or" password')
+    }
+  }
+</script>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #main{
+            margin: auto;
+            margin-top: 25px;
+            display: grid;
+            width: 50%;
+            height: 300px;
+            grid-template-columns:repeat(4,1fr);
+            grid-template-rows: repeat(2,1fr);
+            gap: 10px;
+            grid-template-areas: "A A B E"
+                                 "C D B E";
+        }
+        .item1{
+            grid-area: A;
+            text-align: center;
+            background-color: rgba(29, 25, 25, 0.904);
+            border-radius: 10px;
+            color: aliceblue;
+        }
+        .item2{
+            grid-area: B;
+            background-color: rgba(29, 25, 25, 0.904);
+            border-radius: 10px;
+            color: aliceblue;
+            text-align: center;
+        }
+        .item3{
+            grid-area: C;
+            background-color: rgba(29, 25, 25, 0.904);
+            border-radius: 10px;
+            color: aliceblue;
+            text-align: center;
+        }
+        .item4{
+            grid-area: D;
+            background-color: rgba(29, 25, 25, 0.904);
+            border-radius: 10px;
+            color: aliceblue;
+            text-align: center;
+        }
+        .item5{
+            grid-area: E;
+            background-color: rgba(29, 25, 25, 0.904);
+            border-radius: 10px;
+            color: aliceblue;
+            text-align: center;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="item1">A</div>
+        <div class="item2">B</div>
+        <div class="item3">C</div>
+        <div class="item4">D</div>
+        <div class="item5">E</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="main">
+        <input type="text" placeholder="Name" id="Name">
+        <input type="number" placeholder="Age" id="Age">
+        <select id="gender">
+            <option value="">--</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <input type="Email" placeholder="Email" id="Email">
+        <input type="number" placeholder="Mobile Number" id="Mobile">
+        <input type="submit" value="Signup">
+    </form>
+</body>
+</html>
+
+<script>
+    document.querySelector("#main").addEventListener("submit",fun)
+
+    function fun(){
+        event.preventDefault();
+        var Name1 = document.querySelector("#Name").value
+        var Age = document.querySelector("#Age").value
+        var gender = document.querySelector("#gender").value
+        var email = document.querySelector("#Email").value
+        var Mobile = document.querySelector("#Mobile").value
+        console.log(Name1,Age,gender,email,Mobile)
+    }
+
+</script>

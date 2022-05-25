@@ -1,0 +1,47 @@
+*{
+    text-align: center;
+}
+
+.gmap_canvas {
+    overflow:hidden;
+    background:none!important;
+    height:100%;
+    width:100%;
+}
+
+.mapouter{
+    position:relative;
+    text-align:right;
+    width:50%;
+    height: 100%;
+}
+
+#containerdiv{
+    display: flex;
+    width: 80%;
+    height: 400px;
+    margin: auto;
+    margin-top: 3%;
+}
+#container{
+    width: 50%;
+    text-align: left;
+}
+.fa-solid{
+    font-size: 20px;
+    padding: 10px 5px 10px 5px;
+}
+p{
+    display: inline;
+    padding: 10px 5px 10px 5px;
+}
+#locationbutton{
+    color: brown;
+    font-size: 25px;
+}
+#location{
+    margin: auto;
+    margin-top: 3%;
+    width: 60%;
+    background-color: rgb(181, 181, 199);
+}

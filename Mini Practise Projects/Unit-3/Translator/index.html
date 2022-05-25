@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #container{
+            display: flex;
+            width: 90%;
+            height: 300px;
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        #input,#output{
+            width: 45%;
+            height: 80%;
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        }
+        #input_text,#outputtext{
+            width: 80%;
+            height: 70%;
+        }
+        #buttondiv{
+            text-align: center;
+            margin: auto;
+            margin-top: 30px;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Mini Translator</h1>
+    <div id="container">
+        <div id="input">
+            <textarea id="input_text" placeholder="Type Here"></textarea><br>
+            <button id="button" onclick="searchbutton()">Translate</button>
+            <select id="input_ln">
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+            </select>
+        </div>
+        <div id="output">
+            <textarea id="outputtext"></textarea><br>
+            <select id="output_ln">
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+            </select>
+        </div>
+    </div>
+   
+</body>
+</html>
+<script>
+    function get(id){
+        return document.getElementById(id)
+    }
+
+    async function searchbutton(){
+
+
+
+        try{
+            get('outputtext').innerText=null
+            var input = get('input_text').value
+            var input_ln = get('input_ln').value
+            var output_ln = get('output_ln').value
+            console.log(input_ln,output_ln)
+            var data = await fetch('https://libretranslate.de/translate',{
+                method:'POST',
+                body : JSON.stringify({
+                    q:input,
+                    source:input_ln,
+                    target:output_ln,
+                    format:'text'
+                }),
+                headers:{
+                    'Content-Type':"application/json",
+                },
+            })
+            var maindata = await data.json()
+            var x = maindata.translatedText
+            console.log(x)
+           
+            get('outputtext').innerText=x
+        }
+        catch(err){
+            console.log(err)
+        }
+    }
+</script>
